@@ -26,22 +26,80 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 	
 	dec3to8 n(Erx, rx_addr ,Rin );
 	
-	
 	always@(posedge clock )
-
-	
-
-	
+	begin
 	if (!Rest|(state===2'bx)&(Run==1'b1))
 	begin
 	state=T0;
 	end 
+	if ((state!==2'bx)&(Run==1'b1))
+	begin
+		case(state)
+		T0:
+	
+		state=T1;
+		
+		
+		T1:
+		begin
+		case(opcode)
+		3'b000:
+		
+		state=T0;
+		
+		
+		
+		
+		3'b001:
+	
+		
+		state=T0;
+	
+		3'b010:
+	
+		
+		
+		
+		state=T2;
+
+		3'b011:
+	
+		
+		
+		state=T2;
+	
+		
+		endcase
+		end
+		T2:
+	
+		state=T3;
+		
+		
+		T3:
 		
 	
+	
+		state=T0;
+		
+		
+		
+		
+		endcase
+	end 
+	end
 
 			
 	
-	else if ((state!==2'bx)&(Run==1'b1))
+	 
+	
+	
+	always@(posedge clock )
+
+	if ((state!==2'bx)&(Run==1'b1))
+
+	
+	
 	begin
 		case(state)
 		T0:
@@ -53,7 +111,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=0;
 		Done=0;
-		state=T1;
+		
 		end
 		
 		T1:
@@ -71,7 +129,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=1;
 		Done=1;
-		state=T0;
+		
 		end
 		
 		else
@@ -83,7 +141,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=1;
 		Done=1;
-		state=T0;
+		
 		end
 		
 		
@@ -98,7 +156,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=1;
 		Done=1;
-		state=T0;
+		
 		end
 		3'b010:
 		begin
@@ -111,7 +169,6 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=1;
 		Erx=0;
 		Done=0;
-		state=T2;
 		end
 		
 		else
@@ -123,7 +180,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=1;
 		Erx=0;
 		Done=0;
-		state=T2;
+		
 
 		end
 		end
@@ -138,7 +195,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=1;
 		Erx=0;
 		Done=0;
-		state=T2;
+		
 		end
 		
 		else
@@ -150,7 +207,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=1;
 		Erx=0;
 		Done=0;
-		state=T2;
+		
 
 		end
 		end
@@ -172,7 +229,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=0;
 		Done=0;
-		state=T3;
+		
 		end
 		
 		else
@@ -184,7 +241,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=0;
 		Done=0;
-		state=T3;
+		
 		end
 		end
 		3'b011:
@@ -198,7 +255,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=0;
 		Done=0;
-		state=T3;
+	
 		end
 		
 		else
@@ -210,7 +267,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=0;
 		Done=0;
-		state=T3;
+	
 		end
 		
 		end
@@ -228,7 +285,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		Ain=0;
 		Erx=1;
 		Done=1;
-		state=T0;
+		
 		
 		
 		
