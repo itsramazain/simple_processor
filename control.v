@@ -53,7 +53,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		T0:
 		begin
 		sel=4'bx;
-		IRin=1;
+		IRin=0;
 		addsub=1'bx;
 		Gin=0;
 		Ain=0;
@@ -72,7 +72,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		if (immorreg)
 		begin
 			sel=4'd9;
-		IRin=0;
+		IRin=1;
 		addsub=1'bx;
 		Gin=0;
 		Ain=0;
@@ -86,7 +86,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		else
 		begin
 		sel={1'b0,ry_addr};
-		IRin=0;
+		IRin=1;
 		addsub=1'bx;
 		Gin=0;
 		Ain=0;
@@ -101,7 +101,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		3'b001:
 		begin
 		sel=4'd10;
-		IRin=0;
+		IRin=1;
 		addsub=1'bx;
 		Gin=0;
 		Ain=0;
@@ -232,7 +232,7 @@ module control(instruction,clock,Run,Rest,Done,Gin,addsub,Ain,sel,IRin,state,Rin
 		
 		begin
 		sel=4'd8;
-		IRin=0;
+		IRin=1;
 		addsub=1'bx;
 		Gin=0;
 		Ain=0;
