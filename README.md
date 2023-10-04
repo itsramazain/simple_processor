@@ -22,4 +22,8 @@ _____________________________
 architecture 
 ![image](https://github.com/itsramazain/simple_processor/assets/104790048/b7ab130d-d4b0-4f72-b7c3-6c2eed0ae107)
 
+______________________
+waveform_output of first test_bench
 
+
+second test_bench_waveform
